@@ -1,0 +1,34 @@
+
+k8s_yaml([
+    'mysql-deployment.yaml',
+    'wordpress-deployment.yaml'
+    ])
+
+docker_build(
+    'wordpress-local-image',
+    '.',
+    live_update=[
+        sync(
+            './theme/welcome-to-kubernetes-theme/',
+            '/var/www/html/wp-content/themes/welcome-to-kubernetes-theme-master/'
+            )
+        ],
+    dockerfile='./Dockerfile')
+
+k8s_resource('wordpress-mysql', port_forwards=3306)
+k8s_resource('wordpress', resource_deps=['wordpress-mysql'], port_forwards=8080)
+
+# Load database to wordpress (use after wordpress Deploy is ready)
+
+# local_resource('Load database', resource_deps=['wordpress'],
+#      cmd='mysqlPod=`kubectl get pods -l tier=mysql -o=jsonpath=\'{.items[0].metadata.name}\'` && kubectl exec -it "$mysqlPod" -n default -- mysql -u root -ppassword wordpress < ./database.sql',
+#      auto_init=False, trigger_mode=TRIGGER_MODE_MANUAL)
+
+# Still cannot run local_resource in Windows. Dev team is informed: https://github.com/windmilleng/tilt/issues/3189
+
+# When running Tilt with Windows, sometimes Tilt does not start the build. Try to save this file to wake the build process.
+
+# In this example we are building from local image. Local image is defined in wordpress-deployment YAML -manifest, spec -> container -> image.
+# This has to be same name with docker_build in Tiltfile
+
+# (Name cannot be found from Docker Hub or that might cause a conflict)
