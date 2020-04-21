@@ -1,6 +1,6 @@
 # Local Wordpress in Kubernetes
 
-This is an example, how to make Wordpress in Kubernetes with filesync to theme folder.
+Make Wordpress in Kubernetes with filesync.
 ------
 
 You need Kubernetes (such as [Minikube](https://minikube.sigs.k8s.io/docs/) ) and Docker.
