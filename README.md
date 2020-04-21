@@ -13,13 +13,15 @@ Example works in Linux and Windows. I assume it work on macOS too.
 
 ## Instructions
 
+**Windows users:** Have to use terminal with administrator rights, to run Minikube and Tilt
+
 ### Starting up
   * Clone *this* repository to your computer
   
     `git clone https://github.com/Eskilmar/kubernetes-dev-env`
   * Clone example theme to **/theme/ -folder**, from here: https://github.com/Eskilmar/welcome-to-kubernetes-theme/
   
-    `cd theme`
+    `cd kubernetes-dev-env/theme`
     
     `git clone https://github.com/Eskilmar/welcome-to-kubernetes-theme/`
     
@@ -33,12 +35,27 @@ Example works in Linux and Windows. I assume it work on macOS too.
     
     `tilt up`
     
-  * After the deploy of Wordpress is ready, upload `database.sql` in localhost:3306. Default password is *password*.
-  (With Linux you can use script, and click refresh -button in Tilt's browser view, **after the deploy of Wordpress is ready**.)
+  After the Wordpress has deployed, upload `database.sql` in localhost:3306. Default password is *password*.
+  
+  **OR**
+  
+  With Linux you can use script, and click refresh -button in Tilt's browser view, **but after the Wordpress has deployed**.
+  ![alt text](https://github.com/Eskilmar/kubernetes-dev-env/blob/master/readme-img/upload-db.PNG "Uploading database with automated script")
+  
+  **OR**
+  
+  Windows users can use script in Git Bash:
+  ```
+  mysqlPod=`kubectl get pods -l tier=mysql -o=jsonpath='{.items[0].metadata.name}'` && kubectl exec -it "$mysqlPod" -n default -- mysql -u root -ppassword wordpress < ./database.sql
+  ```
+
+------
 
 At this stage you can make changes inside theme folder and system will upload files inside containers.
 
    Wordpress admin username: *demouser*, password: *password*
+   
+------
 
 ### Shutting down
 
