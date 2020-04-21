@@ -33,8 +33,11 @@ Example works in Linux and Windows. I assume it work on macOS too.
     
     `tilt up`
     
+  * After deploy of Wordpress is ready, upload `database.sql` in localhost:3306. Default password is *password*
 
 At this stage you can make changes inside theme folder and system will upload files inside containers.
+   Admin username: demouser
+   Admin password: password
 
 ### Shutting down
 
