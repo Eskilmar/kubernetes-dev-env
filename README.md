@@ -26,8 +26,9 @@ Example works in Linux and Windows. I assume it work on macOS too.
   * Start your Kubernetes 
   
     `minikube start`
-  * Start Tilt 
-  
+  * Start Tilt in /kubernetes-dev-env -folder
+    `cd ..`
+    
     `tilt up`
     
 
