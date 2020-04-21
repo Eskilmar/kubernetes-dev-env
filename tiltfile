@@ -20,9 +20,9 @@ k8s_resource('wordpress', resource_deps=['wordpress-mysql'], port_forwards=8080)
 
 # Load database to wordpress (use after wordpress Deploy is ready)
 
-# local_resource('Load database', resource_deps=['wordpress'],
-#      cmd='mysqlPod=`kubectl get pods -l tier=mysql -o=jsonpath=\'{.items[0].metadata.name}\'` && kubectl exec -it "$mysqlPod" -n default -- mysql -u root -ppassword wordpress < ./database.sql',
-#      auto_init=False, trigger_mode=TRIGGER_MODE_MANUAL)
+local_resource('Load database', resource_deps=['wordpress'],
+     cmd='mysqlPod=`kubectl get pods -l tier=mysql -o=jsonpath=\'{.items[0].metadata.name}\'` && kubectl exec -it "$mysqlPod" -n default -- mysql -u root -ppassword wordpress < ./database.sql',
+     auto_init=False, trigger_mode=TRIGGER_MODE_MANUAL)
 
 # Still cannot run local_resource in Windows. Dev team is informed: https://github.com/windmilleng/tilt/issues/3189
 
