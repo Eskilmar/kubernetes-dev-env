@@ -35,8 +35,9 @@ Example works in Linux and Windows. I assume it work on macOS too.
     
     `tilt up`
     
-  * After the deploy of Wordpress is ready, upload `database.sql` in localhost:3306. Default password is *password*.
-  (With Linux you can use script, and click refresh -button in Tilt's browser view, **after the deploy of Wordpress is ready**.)
+  * After the Wordpress has deployed, upload `database.sql` in localhost:3306. Default password is *password*.
+  (With Linux you can use script, and click refresh -button in Tilt's browser view, **but after the Wordpress has deployed**.)
+  ![alt text](https://github.com/Eskilmar/kubernetes-dev-env/readme-img/upload-db.png "Uploading database with automated script")
 
 At this stage you can make changes inside theme folder and system will upload files inside containers.
 
