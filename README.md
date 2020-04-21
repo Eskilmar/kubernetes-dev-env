@@ -34,4 +34,18 @@ Example works in Linux and Windows. I assume it work on macOS too.
     `tilt up`
     
 
-At this stage you can make changes 
+At this stage you can make changes inside theme folder and system will upload files inside containers.
+
+### Shutting down
+
+  * Closing Tilt
+  
+  `CTRL + C`
+  
+  * Shutting down Kubernetes services, deployments etc.
+  
+  `tilt down`
+  
+  * Close Kubernetes
+  
+  `minikube stop`
