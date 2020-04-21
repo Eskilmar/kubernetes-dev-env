@@ -33,7 +33,9 @@ Example works in Linux and Windows. I assume it work on macOS too.
     
     `tilt up`
     
-  * After deploy of Wordpress is ready, upload `database.sql` in localhost:3306. Default password is *password*
+  * After the deploy of Wordpress is ready, upload `database.sql` in localhost:3306. Default password is *password*.
+  
+  (With Linux you can use script, and click refresh -button in Tilt's browser view, **after the deploy of Wordpress is ready**.)
 
 At this stage you can make changes inside theme folder and system will upload files inside containers.
 
