@@ -37,9 +37,7 @@ Example works in Linux and Windows. I assume it work on macOS too.
 
 At this stage you can make changes inside theme folder and system will upload files inside containers.
 
-   Admin username: demouser
-   
-   Admin password: password
+   Wordpress admin username: *demouser*, password: *password*
 
 ### Shutting down
 
