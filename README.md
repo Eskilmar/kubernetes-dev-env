@@ -13,6 +13,8 @@ Example works in Linux and Windows. I assume it work on macOS too.
 
 ## Instructions
 
+**Windows users:** Have to use terminal with administrator rights, to run Minikube and Tilt
+
 ### Starting up
   * Clone *this* repository to your computer
   
