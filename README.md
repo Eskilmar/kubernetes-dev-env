@@ -19,7 +19,7 @@ Example works in Linux and Windows. I assume it work on macOS too.
     `git clone https://github.com/Eskilmar/kubernetes-dev-env`
   * Clone example theme to **/theme/ -folder**, from here: https://github.com/Eskilmar/welcome-to-kubernetes-theme/
   
-    `cd theme`
+    `cd kubernetes-dev-env/theme`
     
     `git clone https://github.com/Eskilmar/welcome-to-kubernetes-theme/`
     
