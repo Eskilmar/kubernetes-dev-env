@@ -49,6 +49,8 @@ Example works in Linux and Windows. I assume it work on macOS too.
   mysqlPod=`kubectl get pods -l tier=mysql -o=jsonpath='{.items[0].metadata.name}'` && kubectl exec -it "$mysqlPod" -n default -- mysql -u root -ppassword wordpress < ./database.sql
   ```
 
+------
+
 At this stage you can make changes inside theme folder and system will upload files inside containers.
 
    Wordpress admin username: *demouser*, password: *password*
